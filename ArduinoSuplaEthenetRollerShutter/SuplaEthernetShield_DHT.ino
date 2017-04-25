@@ -8,13 +8,13 @@
  * SUPLA DEVICE - ARDUINO - ETHERNET SHIELD & DHT SENSOR
  * Author: Przemyslaw Zygmunt <przemek@supla.org>
  *
- * This example requires DHT sensor library installed. 
+ * This example requires DHT sensor library installed.
  * https://github.com/adafruit/DHT-sensor-library
  */
 
 //#define DHTPIN 24
 //#define DHTTYPE DHT22
- 
+
 // Setup a DHT instance
 //DHT dht(DHTPIN, DHTTYPE);
 
@@ -162,7 +162,7 @@ void setup() {
     pinMode(buttonsMARYSI[i]._port, INPUT);
     pinMode(buttonsMARYSI[i]._relayPort, OUTPUT);
     digitalWrite(buttonsMARYSI[i]._relayPort, HIGH);
-    
+
     pinMode(buttonsSALONduza[i]._port, INPUT);
     pinMode(buttonsSALONduza[i]._relayPort, OUTPUT);
     digitalWrite(buttonsSALONduza[i]._relayPort, HIGH);
@@ -178,15 +178,15 @@ void setup() {
     pinMode(buttonsEkran[i]._port, INPUT);
     pinMode(buttonsEkran[i]._relayPort, OUTPUT);
     digitalWrite(buttonsEkran[i]._relayPort, HIGH);
-    
+
 
   }
 
   Serial.begin(9600);
 
-  // Init DHT library 
-//  dht.begin(); 
-  
+  // Init DHT library
+//  dht.begin();
+
   // Set temperature/humidity callback
  // SuplaDevice.setTemperatureHumidityCallback(&get_temperature_and_humidity);
 
@@ -204,28 +204,28 @@ void setup() {
    * then you must also remove the device itself from cloud.supla.org.
    * Otherwise you will get "Channel conflict!" error.
    */
-    
+
   // CHANNEL0 - RELAY
-  SuplaDevice.addRelay(21, true);           // ﻿44 - ﻿Pin number where the relay is connected      
-                                      // Call SuplaDevice.addRelay(44, true) with an extra "true" parameter 
+  SuplaDevice.addRelay(21, true);           // ﻿44 - ﻿Pin number where the relay is connected
+                                      // Call SuplaDevice.addRelay(44, true) with an extra "true" parameter
                                       // to enable "port value inversion"
-                                      // where HIGH == LOW, and LOW == HIGH   
+                                      // where HIGH == LOW, and LOW == HIGH
 
   // CHANNEL1 - RELAY
-  //SuplaDevice.addRelay(2, true);           // 45 - ﻿﻿Pin number where the relay is connected   
+  //SuplaDevice.addRelay(2, true);           // 45 - ﻿﻿Pin number where the relay is connected
 
   // CHANNEL3 - TWO RELAYS (Roller shutter operation)
-  SuplaDevice.addRollerShutterRelays(23,     // 46 - ﻿﻿Pin number where the 1st relay is connected   
-                                     25, true);    // 47 - ﻿Pin number where the 2nd relay is connected  
-  SuplaDevice.addRollerShutterRelays(27,     // 46 - ﻿﻿Pin number where the 1st relay is connected   
-                                     29, true);    // 47 - ﻿Pin number where the 2nd relay is connected 
-  SuplaDevice.addRollerShutterRelays(31,     // 46 - ﻿﻿Pin number where the 1st relay is connected   
-                                     33, true);    // 47 - ﻿Pin number where the 2nd relay is connected 
-    SuplaDevice.addRollerShutterRelays(35,     // 46 - ﻿﻿Pin number where the 1st relay is connected   
-                                     37, true);    // 47 - ﻿Pin number where the 2nd relay is connected 
-    SuplaDevice.addRollerShutterRelays(39,     // 46 - ﻿﻿Pin number where the 1st relay is connected   
-                                     41, true);    // 47 - ﻿Pin number where the 2nd relay is connected 
-                                       
+  SuplaDevice.addRollerShutterRelays(23,     // 46 - ﻿﻿Pin number where the 1st relay is connected
+                                     25, true);    // 47 - ﻿Pin number where the 2nd relay is connected
+  SuplaDevice.addRollerShutterRelays(27,     // 46 - ﻿﻿Pin number where the 1st relay is connected
+                                     29, true);    // 47 - ﻿Pin number where the 2nd relay is connected
+  SuplaDevice.addRollerShutterRelays(31,     // 46 - ﻿﻿Pin number where the 1st relay is connected
+                                     33, true);    // 47 - ﻿Pin number where the 2nd relay is connected
+    SuplaDevice.addRollerShutterRelays(35,     // 46 - ﻿﻿Pin number where the 1st relay is connected
+                                     37, true);    // 47 - ﻿Pin number where the 2nd relay is connected
+    SuplaDevice.addRollerShutterRelays(39,     // 46 - ﻿﻿Pin number where the 1st relay is connected
+                                     41, true);    // 47 - ﻿Pin number where the 2nd relay is connected
+
   // CHANNEL4 - Opening sensor (Normal Open)
   //SuplaDevice.addSensorNO(A0); // A0 - ﻿Pin number where the sensor is connected
                                // Call SuplaDevice.addSensorNO(A0, true) with an extra "true" parameter
@@ -244,18 +244,18 @@ void setup() {
 
   /*
    * SuplaDevice Initialization.
-   * Server address, LocationID and LocationPassword are available at https://cloud.supla.org 
+   * Server address, LocationID and LocationPassword are available at https://cloud.supla.org
    * If you do not have an account, you can create it at https://cloud.supla.org/account/create
    * SUPLA and SUPLA CLOUD are free of charge
-   * 
+   *
    */
 
-  SuplaDevice.begin(GUID,              // Global Unique Identifier 
+  SuplaDevice.begin(GUID,              // Global Unique Identifier
                     mac,               // Ethernet MAC address
                     "svr2.supla.org",  // SUPLA server address
-                    1084,                 // Location ID 
-                    "ed75");               // Location Password
-    
+                    xxxx,                 // Location ID
+                    "xxxx");               // Location Password
+
 }
 
 void loop() {
